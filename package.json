@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "This is HTML, Scss, jQuery develop environment.",
   "scripts": {
-    "dev": "node-sass assets/scss/main.scss dist/css/style.css -w & watchify assets/js/main.js --debug -v -o dist/js/main.js & reload -b",
-    "compile:sass": "node-sass assets/scss/main.scss dist/css/style.css -w",
+    "dev": "node-sass -w --output-style compressed assets/scss/main.scss dist/css/style.css & watchify assets/js/main.js --debug -v -o dist/js/main.js & reload -b",
+    "compile:sass": "node-sass -w --output-style compressed assets/scss/main.scss dist/css/style.css",
     "compile:js": "browserify assets/js/main.js -o dist/js/main.js",
     "watch:js": "watchify assets/js/main.js --debug -v -o dist/js/main.js"
   },
