@@ -1,0 +1,64 @@
+/**
+ * レスポンシブ
+ * - sm:  400px〜
+ * - md:  768px〜
+ * - lg: 1024px〜
+ * - xl: 1200px〜
+ */
+$breakpoints: (
+  "sm": "screen and (min-width: 400px)",
+  "md": "screen and (min-width: 768px)",
+  "lg": "screen and (min-width: 1024px)",
+  "xl": "screen and (min-width: 1200px)",
+) !default;
+
+@mixin mq($breakpoint: md) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+/**
+ * ボタン 構造
+ * - @param height 高さ(*必須)
+ * - @param width 幅
+ * - @param border-radius 角丸
+ */
+@mixin btn-generate($height, $width: 100%, $border-radius: $base-radius) {
+  appearance: none;
+  display: inline-block;
+  width: $width;
+  font-weight: bold;
+  line-height: $height;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: $border-radius;
+  outline: 0;
+}
+
+/**
+ * ボタン スタイル
+ * - @param bg-color 背景色(*必須)
+ * - @param color 文字色
+ * - @param border 線の太さ
+ * - @param border-color 線の色
+ */
+@mixin btn-style(
+  $bg-color,
+  $color: $base-text-color,
+  $border-width: $base-border-width,
+  $border-color: $border-color
+) {
+  color: $color;
+  background: $bg-color;
+  transition: all 0.3s ease-in-out;
+
+  @if $border-width != 0 {
+    border: $border-width solid $border-color;
+  }
+
+  &:hover {
+    opacity: 0.9;
+  }
+}

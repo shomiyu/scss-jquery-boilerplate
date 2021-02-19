@@ -1,1 +1,7 @@
-@import "./components/test";
+@charset "utf-8";
+
+@import "./modules/functions";
+@import "./modules/variables";
+@import "./modules/mixins";
+@import "./modules/reset";
+@import "./modules/base";
