@@ -1,0 +1,16 @@
+{
+  "name": "html-jquery-scss-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "reload -b & node-sass assets/scss/main.scss css/style.css -w",
+    "compile:sass": "node-sass assets/scss/main.scss css/style.css -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^5.0.0",
+    "reload": "^3.1.1"
+  }
+}
