@@ -1,16 +1,20 @@
 {
-  "name": "html-jquery-scss-boilerplate",
+  "name": "html-scss-jquery-boilerplate",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "This is HTML, Scss, jQuery develop environment.",
   "scripts": {
-    "dev": "reload -b & node-sass assets/scss/main.scss css/style.css -w",
-    "compile:sass": "node-sass assets/scss/main.scss css/style.css -w"
+    "dev": "node-sass assets/scss/main.scss dist/css/style.css -w & watchify assets/js/main.js --debug -v -o dist/js/main.js & reload -b",
+    "compile:sass": "node-sass assets/scss/main.scss dist/css/style.css -w",
+    "compile:js": "browserify assets/js/main.js -o dist/js/main.js",
+    "watch:js": "watchify assets/js/main.js --debug -v -o dist/js/main.js"
   },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
+    "browserify": "^17.0.0",
     "node-sass": "^5.0.0",
-    "reload": "^3.1.1"
+    "reload": "^3.1.1",
+    "watchify": "^4.0.0"
+  },
+  "dependencies": {
+    "jquery": "^3.5.1"
   }
 }
