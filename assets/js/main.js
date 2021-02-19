@@ -1,7 +1,6 @@
 "use strict";
+const $ = require("jquery");
 
-var $ = require("jquery");
-
-$(function () {
-  console.log("OK");
+$(window).on("load", function () {
+  console.log("jQuery is Ready!");
 });
